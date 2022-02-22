@@ -4,8 +4,8 @@ import { Users } from '../users';
 function BasicSearch() {
     const [query, setQuery] = useState('');
     return (
-        <div>
-            <input type="text" className='search' placeholder='Search'
+        <div className='text-center' >
+            <input type="text" className='search form-control w-25' placeholder='Search'
                 value={query}
                 onChange={e => setQuery(e.target.value)}
             />
@@ -14,7 +14,7 @@ function BasicSearch() {
                     Users.filter((user) => {
                         return user.first_name.toLowerCase().includes(query)
                     }).map((user) => {
-                        return <li className='listItem' key={user.id}>{user.first_name}</li>
+                        return <li className='listItem text-left my-2' key={user.id}>{user.first_name}</li>
                     })
                 }
             </ul>
