@@ -1,7 +1,6 @@
 
 import React, { useState } from 'react'
-import { Users } from '../users';
-function BasicSearch() {
+function BasicSearch({data}) {
     const [query, setQuery] = useState('');
     return (
         <div className='text-center' >
@@ -11,7 +10,7 @@ function BasicSearch() {
             />
             <ul className='list'>
                 {
-                    Users.filter((user) => {
+                    data.filter((user) => {
                         return user.first_name.toLowerCase().includes(query)
                     }).map((user) => {
                         return <li className='listItem text-left my-2' key={user.id}>{user.first_name}</li>
